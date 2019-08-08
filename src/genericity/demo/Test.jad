@@ -1,0 +1,35 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Test.java
+
+package genericity.demo;
+
+import java.io.PrintStream;
+
+// Referenced classes of package genericity.demo:
+//            Pair
+
+public class Test
+{
+
+    public Test()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        Pair pair = new Pair(Integer.valueOf(1), Integer.valueOf(2));
+        int i = ((Integer)pair.getOne()).intValue();
+        int j = ((Integer)pair.getTwo()).intValue();
+        System.out.println((new StringBuilder()).append("one:").append(i).append(",two:").append(j).toString());
+        Pair pair1 = new Pair(Character.valueOf('\u4E00'), Character.valueOf('\u4E8C'));
+        char c = ((Character)pair1.getOne()).charValue();
+        char c1 = ((Character)pair1.getTwo()).charValue();
+        System.out.println((new StringBuilder()).append("one:").append(c).append(",two:").append(c1).toString());
+        Pair pair2 = new Pair("I", "II");
+        String s = (String)pair2.getOne();
+        String s1 = (String)pair2.getTwo();
+        System.out.println((new StringBuilder()).append("one:").append(s).append(",two:").append(s1).toString());
+    }
+}
